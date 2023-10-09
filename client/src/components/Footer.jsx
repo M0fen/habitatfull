@@ -10,7 +10,7 @@ export default function Footer() {
             <span className="text-slate-500">HABITAT</span>
             <span className="text-slate-700">Propiedad Raíz</span>
           </h1>
-          <p className="text-slate-700 mt-2">Contacto: info@habitat.com</p>
+          <p className="text-slate-700 mt-2">Contacto: 323</p>
         </div>
         <div className="flex items-center gap-4">
           <nav>

@@ -11,7 +11,7 @@ export default function Home() {
   const [saleListings, setSaleListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
   SwiperCore.use([Navigation]);
-  console.log(offerListings);
+  
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
@@ -68,7 +68,11 @@ export default function Home() {
       </div>
 
       {/* swiper */}
-      <Swiper navigation>
+      <Swiper
+        navigation
+        pagination={{ clickable: true }}
+        className="h-[500px]"
+      >
         {offerListings &&
           offerListings.length > 0 &&
           offerListings.map((listing) => (
@@ -78,8 +82,13 @@ export default function Home() {
                   background: `url(${listing.imageUrls[0]}) center no-repeat`,
                   backgroundSize: 'cover',
                 }}
-                className="h-[500px]"
-              ></div>
+                className="h-[500px] flex justify-center items-center"
+              >
+                <h3 className="text-white font-bold text-xl">
+                  {listing.title}
+                </h3>
+                <p className="text-white text-sm">{listing.description}</p>
+              </div>
             </SwiperSlide>
           ))}
       </Swiper>
