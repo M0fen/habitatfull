@@ -3,14 +3,14 @@ import { FaFacebook, FaTwitter, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-200 shadow-md">
+    <footer className="bg-blue-600 text-white shadow-md">
       <div className="container mx-auto p-2 flex flex-wrap justify-between items-center">
         <div>
           <h1 className="font-bold text-lg sm:text-2xl flex flex-wrap ">
-            <span className="text-slate-500">HABITAT</span>
-            <span className="text-slate-700">Propiedad Raíz</span>
+            <span className="text-blue-300">HABITAT</span>
+            <span className="text-white">Propiedad Raíz</span>
           </h1>
-          <p className="text-slate-700 mt-2">Contacto: 323</p>
+          <p className="text-white mt-2">Contacto: 323</p>
         </div>
         <div className="flex items-center gap-4">
           <nav>
