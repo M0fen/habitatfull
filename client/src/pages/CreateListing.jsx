@@ -32,7 +32,7 @@ export default function CreateListing() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   console.log(formData);
-  const handleImageSubmit = (e) => {
+  const handleImageSubmit = () => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
       setImageUploadError(false);
@@ -53,6 +53,7 @@ export default function CreateListing() {
         .catch((err) => {
           setImageUploadError('La descarga ha fallado (2 mb max por imágen)');
           setUploading(false);
+          console.log(err);
         });
     } else {
       setImageUploadError('Solo puedes subir 6 fotos por propiedad');
