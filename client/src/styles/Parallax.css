@@ -1,0 +1,18 @@
+.parallax-container {
+    background-image: url('https://images.pexels.com/photos/7031407/pexels-photo-7031407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Cambia esta URL a tu imagen de fondo */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px #000;
+  }
+  
+  .parallax {
+    transform: translateY(50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+  }
