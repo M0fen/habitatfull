@@ -3,10 +3,11 @@
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: solid 2px #000;
   }
   
   .parallax {
