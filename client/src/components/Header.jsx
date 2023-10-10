@@ -23,7 +23,8 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className="bg-blue-600 text-white shadow-md">
+    // Usa la clase bg-gray-800 para cambiar el color del fondo a un gris oscuro y vibrante
+    <header className="bg-gray-800 text-white shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
           <div>
@@ -45,7 +46,7 @@ export default function Header() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button>
-            <FaSearch className="text-blue-600" />
+            <FaSearch className="text-gray-600" />
           </button>
         </form>
         <ul className="flex gap-4">
@@ -54,10 +55,16 @@ export default function Header() {
               Inicio
             </li>
           </Link>
+          {/* Agrega el elemento <li> con el componente <Link> a la lista de elementos <li> */}
+          <li>
+            <Link to="/search" className="text-white hover:underline">
+              Propiedades
+            </Link>
+          </li>
           <Link to="/about">
 
             <li className="hidden sm:inline text-gray-100 hover:underline">
-              About
+              Acerca de
             </li>
           </Link>
           <Link to="/profile">
@@ -68,6 +75,7 @@ export default function Header() {
                 alt="profile"
               />
             ) : (
+              // Usa la clase text-white para cambiar el color del texto a blanco
               <li className=" text-slate-700 hover:underline text-white"> Sign in</li>
             )}
           </Link>

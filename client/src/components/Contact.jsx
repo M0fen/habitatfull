@@ -35,7 +35,7 @@ export default function Contact({ listing }) {
             rows="2"
             value={message}
             onChange={onChange}
-            placeholder="Enter your message here..."
+            placeholder="Cuéntanos en qué te podemos ayudar😊"
             className="w-full border p-3 rounded-lg"
           ></textarea>
 
@@ -43,7 +43,7 @@ export default function Contact({ listing }) {
             to={`mailto:${landlord.email}?subject=Regarding ${listing.name}&body=${message}`}
             className="bg-slate-700 text-white text-center p-3 uppercase rounded-lg hover:opacity-95"
           >
-            Send Message
+            Enviar Mensaje
           </Link>
         </div>
       )}

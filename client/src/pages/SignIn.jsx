@@ -71,7 +71,7 @@ export default function SignIn() {
       <div className="flex gap-2 mt-5">
         <p>Aún no estás registrado?</p>
         <Link to={'/sign-up'}>
-          <span className="text-blue-700">Regístrate</span>
+          <span className="text-gray-700">Regístrate</span>
         </Link>
       </div>
       {error && <p className="text-red-500 mt-5">{error}</p>}

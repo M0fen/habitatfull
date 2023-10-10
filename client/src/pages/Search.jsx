@@ -138,7 +138,7 @@ export default function Search() {
             <input
               type='text'
               id='searchTerm'
-              placeholder='Search...'
+              placeholder='Buscar por'
               className='border rounded-lg p-3 w-full'
               value={sidebardata.searchTerm}
               onChange={handleChange}
@@ -188,7 +188,7 @@ export default function Search() {
             </div>
           </div>
           <div className='flex gap-2 flex-wrap items-center'>
-            <label className='font-semibold'>Amenities:</label>
+            <label className='font-semibold'>Características</label>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
@@ -197,7 +197,7 @@ export default function Search() {
                 onChange={handleChange}
                 checked={sidebardata.parking}
               />
-              <span>Parking</span>
+              <span>Parqueadero</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -218,8 +218,8 @@ export default function Search() {
               id='sort_order'
               className='border rounded-lg p-3'
             >
-              <option value='regularPrice_desc'>Price high to low</option>
-              <option value='regularPrice_asc'>Price low to hight</option>
+              <option value='regularPrice_desc'>Precio más alto primero</option>
+              <option value='regularPrice_asc'>Precio más bajo primero</option>
               <option value='createdAt_desc'>Más reciente</option>
               <option value='createdAt_asc'>Más antigua</option>
             </select>
@@ -239,7 +239,7 @@ export default function Search() {
           )}
           {loading && (
             <p className='text-xl text-slate-700 text-center w-full'>
-              Loading...
+              Cargando propiedades🏠
             </p>
           )}
 

@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
+//import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import SwiperCore from "swiper";
 import "swiper/css/bundle";
 import ListingItem from "../components/ListingItem";
 // import realState from "../../public/real-state.jpg";
 import logoOriginal from '../../public/logoOriginal.png';
-import Parallax from '../components/Parallax';
+import ParallaxImage from '../components/ParallaxImage';
+// Importa GSAP y el plugin TextPlugin
+import { gsap } from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -55,24 +58,32 @@ const styles = {
     };
     fetchOfferListings();
   }, []);
+
+  // Registra el plugin TextPlugin con GSAP
+  gsap.registerPlugin(TextPlugin);
+
+  // Crea una referencia para el texto que quieres animar
+  const text = useRef();
+
+
+  useLayoutEffect(() => {
+
+    gsap.to(text.current, { duration: 2, text: () => "Propiedades que te ofrecen <span className='text-gray-900'>más</span> que un espacio" });
+  }, []);
+
   return (
-    <div>
-      {/* top */}
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
-        <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
-          Propiedades que te ofrecen <span className='text-slate-500'>más</span>
-          <br />
-          que un espacio
-        </h1>
-        <div className='text-gray-400 text-xs sm:text-sm'>
-          En hábitat propiedad raíz tenemos la capacidad de hacer ágiles tus
-          procesos
-          <br />
-          Además tenemos trin y tran
+    <div className="home">
+      <div className="home__header" style={styles.bgHeader}>
+        <div className="home__headerText">
+
+          {/* Usa el atributo style para cambiar el tamaño y el color de las letras */}
+          {/* Usa el breakpoint md: para cambiar el ancho y el tamaño del texto en pantallas medianas o mayores */}
+          <h1 ref={text} style={{ fontSize: "5rem", color: "gray" }} className="w-50 md:w-75 md:text-6xl"></h1>
         </div>
+
         <Link
           to={"/search"}
-          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
+          className='text-xs sm:text-sm text-gray-800 font-bold hover:underline'
         >
           Busquemos tu casa indicada...
         </Link>
@@ -80,7 +91,7 @@ const styles = {
 
       {/* paralax  */}
 
-      <Parallax/>
+      <ParallaxImage/>
 
       {/* listing results for offer, sale and rent */}
 
@@ -88,11 +99,11 @@ const styles = {
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>
+              <h2 className='text-2xl font-semibold text-gray-900'>
                 Propiedades Recientes
               </h2>
               <Link
-                className='text-sm text-blue-800 hover:underline'
+                className='text-sm text-gray-800 hover:underline'
                 to={"/search?offer=true"}
               >
                 Ver Más Propiedades
@@ -112,7 +123,7 @@ const styles = {
                 Excelentes propiedades en Renta
               </h2>
               <Link
-                className='text-sm text-blue-800 hover:underline'
+                className='text-sm text-gray-800 hover:underline'
                 to={"/search?type=rent"}
               >
                 Ver más propiedades en renta
@@ -128,11 +139,11 @@ const styles = {
         {saleListings && saleListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>
+              <h2 className='text-2xl font-semibold text-gray-900'>
                 Hermosas propiedades en Venta
               </h2>
               <Link
-                className='text-sm text-blue-800 hover:underline'
+                className='text-sm text-gray-800 hover:underline'
                 to={"/search?type=sale"}
               >
                 Ver más propiedades en Venta

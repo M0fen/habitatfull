@@ -51,9 +51,9 @@ export default function Listing() {
 
   return (
     <main>
-      {loading && <p className="text-center my-7 text-2xl">Loading...</p>}
+      {loading && <p className="text-center my-7 text-2xl">Cargando...</p>}
       {error && (
-        <p className="text-center my-7 text-2xl">Something went wrong!</p>
+        <p className="text-center my-7 text-2xl">Algo salió mal!</p>
       )}
       {listing && !loading && !error && (
         <div className="pt-2 ">
@@ -62,7 +62,7 @@ export default function Listing() {
               <SwiperSlide key={url}>
                 <center>
                   <div
-                    className="h-[350px] w-64 text-center bg-auto "
+                    className="h-[450px] w-80 text-center bg-auto "
                     style={{
                       background: `url(${url}) center no-repeat`,
                       backgroundSize: 'cover',
@@ -72,7 +72,7 @@ export default function Listing() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer">
+          <div className="fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-400 cursor-pointer">
             <FaShare
               className="text-slate-500"
               onClick={() => {
@@ -85,16 +85,16 @@ export default function Listing() {
             />
           </div>
           {copied && (
-            <p className="fixed top-[23%] right-[5%] z-10 rounded-md bg-slate-100 p-2">
-              Link copied!
+            <p className="fixed top-[23%] right-[5%] z-10 rounded-md bg-white p-2">
+             Haz copiado éste link!
             </p>
           )}
           <div className="flex flex-col max-w-4xl mx-auto p-3 my-7 gap-4">
             <p className="text-2xl font-semibold">
               {listing.name} - ${' '}
               {listing.offer
-                ? listing.discountPrice.toLocaleString('en-US')
-                : listing.regularPrice.toLocaleString('en-US')}
+                ? listing.discountPrice.toLocaleString('es-CO')
+                : listing.regularPrice.toLocaleString('es-CO')}
               {listing.type === 'rent' && ' / month'}
             </p>
             <p className="flex items-center mt-6 gap-2 text-slate-600  text-sm">
@@ -112,7 +112,7 @@ export default function Listing() {
               )}
             </div>
             <p className="text-slate-800">
-              <span className="font-semibold text-black">Descripción - </span>
+              <span className="font-semibold text-black">Descripción de la Propiedad: </span>
               {listing.description}
             </p>
             <ul className="text-green-900 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6">
