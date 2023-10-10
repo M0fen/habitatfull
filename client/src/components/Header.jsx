@@ -2,7 +2,7 @@ import { FaSearch } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-
+import logoOriginal from '../../public/logoOriginal.png';
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,9 +26,11 @@ export default function Header() {
     <header className="bg-blue-600 text-white shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
+          <div>
+        <img className='w-40' src={logoOriginal} alt="Logo Habitat" />
+
+          </div>
           <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-            <span className="text-blue-300">HABITAT</span>
-            <span className="text-white">PropiedadRaíz</span>
           </h1>
         </Link>
         <form
@@ -48,12 +50,12 @@ export default function Header() {
         </form>
         <ul className="flex gap-4">
           <Link to="/">
-            <li className="hidden sm:inline text-slate-700 hover:underline">
+            <li className="hidden sm:inline text-slate-700 hover:underline text-white ">
               Inicio
             </li>
           </Link>
           <Link to="/about">
-            <li className="hidden sm:inline text-slate-700 hover:underline">
+            <li className="hidden sm:inline text-slate-700 hover:underline text-white">
               About
             </li>
           </Link>
@@ -65,7 +67,7 @@ export default function Header() {
                 alt="profile"
               />
             ) : (
-              <li className=" text-slate-700 hover:underline"> Sign in</li>
+              <li className=" text-slate-700 hover:underline text-white"> Sign in</li>
             )}
           </Link>
         </ul>
