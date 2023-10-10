@@ -4,7 +4,7 @@ import { Parallax } from "react-parallax";
 const ParallaxImage = () => {
   return (
     <Parallax
-  bgImage="https://images.pexels.com/photos/7031607/pexels-photo-7031607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  bgImage="https://images.pexels.com/photos/7031607/pexels-photo-7031607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2x "
   strength={300}
   style={{ height: "75vh" }}
   y={[0, -100]}
