@@ -66,12 +66,19 @@ const styles = {
   const text = useRef();
 
 
-  useLayoutEffect(() => {
 
-    gsap.to(text.current, { duration: 2, text: () => "Propiedades que te ofrecen <span className='text-gray-900'>más</span> que un espacio" });
+  useLayoutEffect(() => {
+    gsap.to(text.current, {
+      duration: 2,
+      text: () => "Propiedades que te ofrecen <span className='text-gray-900'>más</span> que un espacio",
+      textAlign: "center", // Centra el texto horizontalmente
+      fontSize: "3rem", // Establece el tamaño de fuente deseado
+      margin: "20 auto", // Establece márgenes automáticos para centrar verticalmente
+    });
   }, []);
 
   return (
+    
     <div className="home">
       <div className="home__header" style={styles.bgHeader}>
         <div className="home__headerText">
@@ -81,13 +88,19 @@ const styles = {
           <h1 ref={text} style={{ fontSize: "5rem", color: "gray" }} className="w-50 md:w-75 md:text-6xl"></h1>
         </div>
 
-        <Link
-          to={"/search"}
-          className='text-xs sm:text-sm text-gray-800 font-bold hover:underline'
-        >
-          Busquemos tu casa indicada...
-        </Link>
+        <button
+        onClick={() => {
+          // Agrega la lógica que desees ejecutar al hacer clic en el botón
+          // Por ejemplo, puedes redirigir al usuario a la página de búsqueda.
+          // history.push("/search");
+        }}
+        className="text-xs sm:text-sm font-bold hover:underline bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 hover:text-gray-900 mx-2"
+      >
+        Busquemos tu casa indicada...
+      </button>
       </div>
+      <br />
+      
 
       {/* paralax  */}
 
