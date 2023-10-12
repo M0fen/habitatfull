@@ -7,11 +7,13 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white shadow-md">
       <div className="container mx-auto p-2 flex flex-col sm:flex-row flex-wrap sm:justify-between sm:items-center">
         <div className="w-full sm:w-auto mb-4 sm:mb-0">
-            <Link to="/">
-              <img className='w-40 ' src={logoOriginal} alt="Logo Habitat"  />
-            </Link>
-            <span className="text-white mr-2">Propiedad Raíz</span>
-          <p className="text-white mt-2">Agentes inmobiliarios con ágilidad en procesos de propiedad raíz.</p>
+          <Link to="/">
+            <img className="w-40 " src={logoOriginal} alt="Logo Habitat" />
+          </Link>
+          <span className="text-white mr-2">Propiedad Raíz</span>
+          <p className="text-white mt-2">
+            Agentes inmobiliarios con ágilidad en procesos de propiedad raíz.
+          </p>
         </div>
         <div className="w-full sm:w-auto flex items-center gap-4">
           <nav>
@@ -22,28 +24,53 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-white hover:underline text-white">
+                <Link
+                  to="/about"
+                  className="text-white hover:underline text-white"
+                >
                   About
                 </Link>
               </li>
             </ul>
           </nav>
           <div>
-            <a href="https://web.facebook.com/habitatpropiedadraiz" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a
+              href="https://web.facebook.com/habitatpropiedadraiz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               <FaFacebook className="inline text-white hover:text-slate-500 text-2xl" />
             </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="ml-2">
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              className="ml-2"
+            >
               <FaTwitter className="inline text-white hover:text-slate-500 text-2xl" />
             </a>
-            <a href="https://www.instagram.com/habitat.propiedadraiz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="ml-2">
+            <a
+              href="https://www.instagram.com/habitat.propiedadraiz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="ml-2"
+            >
               <FaInstagram className="inline text-white hover:text-slate-500 text-2xl" />
             </a>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="ml-2">
+            <a
+              href="https://wa.me/+573234528644"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="ml-2"
+            >
               <FaWhatsapp className="inline text-white hover:text-slate-500 text-2xl" />
             </a>
           </div>
         </div>
-       
       </div>
     </footer>
   );
