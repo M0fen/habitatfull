@@ -7,7 +7,9 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white shadow-md">
       <div className="container mx-auto p-2 flex flex-col sm:flex-row flex-wrap sm:justify-between sm:items-center">
         <div className="w-full sm:w-auto mb-4 sm:mb-0">
-            <img className='w-40 ' src={logoOriginal} alt="Logo Habitat"  />
+            <Link to="/">
+              <img className='w-40 ' src={logoOriginal} alt="Logo Habitat"  />
+            </Link>
             <span className="text-white mr-2">Propiedad Raíz</span>
           <p className="text-white mt-2">Agentes inmobiliarios con ágilidad en procesos de propiedad raíz.</p>
         </div>
@@ -40,6 +42,20 @@ export default function Footer() {
               <FaWhatsapp className="inline text-white hover:text-slate-500 text-2xl" />
             </a>
           </div>
+        </div>
+        <div className="w-full sm:w-auto flex items-center gap-4">
+          <button
+            onClick={() => {
+              // Agrega la lógica que desees ejecutar al hacer clic en el botón
+              // Por ejemplo, puedes redirigir al usuario a la página de búsqueda.
+              // history.push("/search");
+            }}
+            className="text-xs sm:text-sm font-bold hover:underline bg-gray-900 text-white px-4 py-2 rounded inline-flex items-center w-1/4"
+          >
+            <Link to="/search">
+              Busquemos el HABITAT perfecto para tí
+            </Link>
+          </button>
         </div>
       </div>
     </footer>

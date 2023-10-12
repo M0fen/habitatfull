@@ -145,7 +145,7 @@ export default function Search() {
             />
           </div>
           <div className='flex gap-2 flex-wrap items-center'>
-            <label className='font-semibold'>Type:</label>
+            <label className='font-semibold'>Tipo:</label>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
@@ -225,7 +225,7 @@ export default function Search() {
             </select>
           </div>
           <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>
-            Search
+            Buscar
           </button>
         </form>
       </div>
