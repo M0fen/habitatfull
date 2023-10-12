@@ -33,7 +33,7 @@ export default function CreateListing() {
   const [loading, setLoading] = useState(false);
   console.log(formData);
   const handleImageSubmit = () => {
-    if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
+    if (files.length > 0 && files.length + formData.imageUrls.length < 13) {
       setUploading(true);
       setImageUploadError(false);
       const promises = [];
@@ -56,7 +56,7 @@ export default function CreateListing() {
           console.log(err);
         });
     } else {
-      setImageUploadError('Solo puedes subir 6 fotos por propiedad');
+      setImageUploadError('Solo puedes subir 12 fotos por propiedad');
       setUploading(false);
     }
   };
@@ -128,9 +128,9 @@ export default function CreateListing() {
     e.preventDefault();
     try {
       if (formData.imageUrls.length < 1)
-        return setError('You must upload at least one image');
+        return setError('Debes subir por lo menos una imágen (Dando click en "Subir"😉)');
       if (+formData.regularPrice < +formData.discountPrice)
-        return setError('Discount price must be lower than regular price');
+        return setError('El precio de descuento debe ser inferior al regular🚨');
       setLoading(true);
       setError(false);
       const res = await fetch('/api/listing/create', {
@@ -314,7 +314,7 @@ export default function CreateListing() {
           <p className="font-semibold">
             Imágenes:
             <span className="font-normal text-gray-600 ml-2">
-              La primer imágen será el cover 😉(máximo 6 fotos)
+              La primer imágen será el cover 😉(máximo 12 fotos)
             </span>
           </p>
           <div className="flex gap-4">
@@ -354,7 +354,7 @@ export default function CreateListing() {
                   onClick={() => handleRemoveImage(index)}
                   className="p-3 text-red-700 rounded-lg uppercase hover:opacity-75"
                 >
-                  Delete
+                  Eliminar
                 </button>
               </div>
             ))}

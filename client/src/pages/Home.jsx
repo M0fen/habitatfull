@@ -97,7 +97,10 @@ export default function Home() {
             }}
             className="text-xs sm:text-sm font-bold hover:underline bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-900 hover:text-gray-700 transition duration-300 transform hover:scale-105"
           >
-            Busquemos tu casa indicada...
+            <Link to="/search">
+            Busquemos el HABITAT perfecto para ti
+            </Link>
+
           </button>
         </div>
       </div>
