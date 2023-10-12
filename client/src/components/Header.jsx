@@ -28,11 +28,9 @@ export default function Header() {
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
           <div>
-        <img className='w-40' src={logoOriginal} alt="Logo Habitat" />
-
+            <img className="w-40" src={logoOriginal} alt="Logo Habitat" />
           </div>
-          <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-          </h1>
+          <h1 className="font-bold text-sm sm:text-xl flex flex-wrap"></h1>
         </Link>
         <form
           onSubmit={handleSubmit}
@@ -41,7 +39,7 @@ export default function Header() {
           <input
             type="text"
             placeholder="Buscar..."
-            className="bg-transparent text-gray-100 focus:outline-none w-24 sm:w-64"
+            className="bg-transparent text-gray-500 focus:outline-none w-24 sm:w-64 "
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -62,7 +60,6 @@ export default function Header() {
             </Link>
           </li>
           <Link to="/about">
-
             <li className="hidden sm:inline text-gray-100 hover:underline">
               Acerca de
             </li>
@@ -76,7 +73,10 @@ export default function Header() {
               />
             ) : (
               // Usa la clase text-white para cambiar el color del texto a blanco
-              <li className=" text-slate-700 hover:underline text-white"> Sign in</li>
+              <li className=" text-slate-700 hover:underline text-white">
+                {' '}
+                Sign in
+              </li>
             )}
           </Link>
         </ul>

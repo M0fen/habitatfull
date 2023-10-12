@@ -5,13 +5,13 @@ export default function Footer() {
   return (
     // Usa la clase bg-gray-900 para cambiar el color del fondo a un gris muy oscuro y vibrante
     <footer className="bg-gray-900 text-white shadow-md">
-      <div className="container mx-auto p-2 flex flex-wrap justify-between items-center">
-        <div>
+      <div className="container mx-auto p-2 flex flex-col sm:flex-row flex-wrap sm:justify-between sm:items-center">
+        <div className="w-full sm:w-auto mb-4 sm:mb-0">
             <img className='w-40 ' src={logoOriginal} alt="Logo Habitat"  />
             <span className="text-white mr-2">Propiedad Raíz</span>
           <p className="text-white mt-2">Agentes inmobiliarios con ágilidad en procesos de propiedad raíz.</p>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="w-full sm:w-auto flex items-center gap-4">
           <nav>
             <ul className="flex gap-4">
               <li>
