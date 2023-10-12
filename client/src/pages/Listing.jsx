@@ -51,10 +51,17 @@ export default function Listing() {
 
   return (
     <main>
+      {/* <div className="container">
+        <p className="text-2xl font-semibold text-center ">
+          {listing.name} - ${' '}
+          {listing.offer
+            ? listing.discountPrice.toLocaleString('es-CO')
+            : listing.regularPrice.toLocaleString('es-CO')}
+          {listing.type === 'rent' && ' / month'}
+        </p>
+      </div> */}
       {loading && <p className="text-center my-7 text-2xl">Cargando...</p>}
-      {error && (
-        <p className="text-center my-7 text-2xl">Algo salió mal!</p>
-      )}
+      {error && <p className="text-center my-7 text-2xl">Algo salió mal!</p>}
       {listing && !loading && !error && (
         <div className="pt-2 ">
           <Swiper navigation>
@@ -86,17 +93,10 @@ export default function Listing() {
           </div>
           {copied && (
             <p className="fixed top-[23%] right-[5%] z-10 rounded-md bg-white p-2">
-             Haz copiado éste link!
+              Haz copiado éste link!
             </p>
           )}
           <div className="flex flex-col max-w-4xl mx-auto p-3 my-7 gap-4">
-            <p className="text-2xl font-semibold">
-              {listing.name} - ${' '}
-              {listing.offer
-                ? listing.discountPrice.toLocaleString('es-CO')
-                : listing.regularPrice.toLocaleString('es-CO')}
-              {listing.type === 'rent' && ' / month'}
-            </p>
             <p className="flex items-center mt-6 gap-2 text-slate-600  text-sm">
               <FaMapMarkerAlt className="text-green-900" />
               {listing.address}
@@ -112,7 +112,9 @@ export default function Listing() {
               )}
             </div>
             <p className="text-slate-800">
-              <span className="font-semibold text-black">Descripción de la Propiedad: </span>
+              <span className="font-semibold text-black">
+                Descripción de la Propiedad:{' '}
+              </span>
               {listing.description}
             </p>
             <ul className="text-gray-800 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6">

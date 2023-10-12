@@ -43,20 +43,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="w-full sm:w-auto flex items-center gap-4">
-          <button
-            onClick={() => {
-              // Agrega la lógica que desees ejecutar al hacer clic en el botón
-              // Por ejemplo, puedes redirigir al usuario a la página de búsqueda.
-              // history.push("/search");
-            }}
-            className="text-xs sm:text-sm font-bold hover:underline bg-gray-900 text-white px-4 py-2 rounded inline-flex items-center w-1/4"
-          >
-            <Link to="/search">
-              Busquemos el HABITAT perfecto para tí
-            </Link>
-          </button>
-        </div>
+       
       </div>
     </footer>
   );
