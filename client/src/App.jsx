@@ -15,7 +15,7 @@ import Search from './pages/Search';
 export default function App() {
   return (
     <BrowserRouter>
-      <Header />
+  
       <div className="flex flex-col min-h-screen">
         <main className="flex-grow">
           <Routes>
