@@ -88,17 +88,17 @@ export default function Home() {
             className="w-50 md:w-75 md:text-6xl"
           ></h1>
         </div>
-        <div className="mx-auto w-10">
+        <div className="mx-auto  w-68 text-center ">
           <button
             onClick={() => {
               // Agrega la lógica que desees ejecutar al hacer clic en el botón
               // Por ejemplo, puedes redirigir al usuario a la página de búsqueda.
               // history.push("/search");
             }}
-            className="text-xs sm:text-sm font-bold hover:underline bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-900 hover:text-gray-700 transition duration-300 transform hover:scale-105"
+            className="text-xs w-100 m sm:text-sm font-bold  bg-gray-900 text-white px-4 py-2 rounded-md   transition duration-300 transform hover:scale-105"
           >
             <Link to="/search">
-            Busquemos el HABITAT perfecto para ti
+              Busquemos el habitat indicado 
             </Link>
 
           </button>
